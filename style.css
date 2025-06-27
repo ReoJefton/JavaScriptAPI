@@ -2,3 +2,60 @@
   /* padding: 5px; */
   margin: 0px;
 }
+
+.crypto-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Changed from flex-start to stretch for equal height */
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  /* overflow-x: hidden; */
+}
+
+.crypto-box {
+  margin: 5px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 250px;
+  box-sizing: border-box;
+  display: block; 
+  /* display: flex; Changed from block to flex for stretching */
+  /* flex-direction: column;
+  align-self: stretch; */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  height: auto; /* Ensures all boxes in a row are equal height */
+}
+
+@media (min-width: 1201px) {
+  .crypto-box {
+    max-width: 290px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .crypto-box {
+    max-width: 290px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crypto-box {
+    max-width: 370px;
+  }
+}
+
+@media (max-width: 480px) {
+  .crypto-box {
+    max-width: 100%;
+    margin: 2px 0;
+  }
+}
+

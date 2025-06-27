@@ -1,0 +1,112 @@
+[
+  {
+    "id": "btc-bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "rank": 1,
+    "price_usd": 67000.12,
+    "market_cap_usd": 1300000000000,
+    "volume_24h_usd": 35000000000,
+    "circulating_supply": 19500000,
+    "tags": ["mineable", "pow", "sha-256"]
+  },
+  {
+    "id": "eth-ethereum",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "rank": 2,
+    "price_usd": 3500.45,
+    "market_cap_usd": 420000000000,
+    "volume_24h_usd": 18000000000,
+    "circulating_supply": 120000000,
+    "tags": ["mineable", "pow", "smart-contracts"]
+  },
+  {
+    "id": "usdt-tether",
+    "name": "Tether",
+    "symbol": "USDT",
+    "rank": 3,
+    "price_usd": 1.00,
+    "market_cap_usd": 110000000000,
+    "volume_24h_usd": 90000000000,
+    "circulating_supply": 110000000000,
+    "tags": ["stablecoin", "fiat-backed"]
+  },
+  {
+    "id": "bnb-binance-coin",
+    "name": "BNB",
+    "symbol": "BNB",
+    "rank": 4,
+    "price_usd": 600.23,
+    "market_cap_usd": 92000000000,
+    "volume_24h_usd": 2500000000,
+    "circulating_supply": 153000000,
+    "tags": ["exchange-token", "smart-contracts"]
+  },
+  {
+    "id": "sol-solana",
+    "name": "Solana",
+    "symbol": "SOL",
+    "rank": 5,
+    "price_usd": 140.67,
+    "market_cap_usd": 65000000000,
+    "volume_24h_usd": 3500000000,
+    "circulating_supply": 460000000,
+    "tags": ["pos", "smart-contracts"]
+  },
+  {
+    "id": "xrp-xrp",
+    "name": "XRP",
+    "symbol": "XRP",
+    "rank": 6,
+    "price_usd": 0.55,
+    "market_cap_usd": 30000000000,
+    "volume_24h_usd": 1200000000,
+    "circulating_supply": 54500000000,
+    "tags": ["payments", "distributed"]
+  },
+  {
+    "id": "steth-lido-staked-ether",
+    "name": "Lido Staked Ether",
+    "symbol": "stETH",
+    "rank": 7,
+    "price_usd": 3490.10,
+    "market_cap_usd": 32000000000,
+    "volume_24h_usd": 50000000,
+    "circulating_supply": 9200000,
+    "tags": ["liquid-staking", "defi"]
+  },
+  {
+    "id": "usdc-usd-coin",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "rank": 8,
+    "price_usd": 1.00,
+    "market_cap_usd": 32000000000,
+    "volume_24h_usd": 6000000000,
+    "circulating_supply": 32000000000,
+    "tags": ["stablecoin", "fiat-backed"]
+  },
+  {
+    "id": "doge-dogecoin",
+    "name": "Dogecoin",
+    "symbol": "DOGE",
+    "rank": 9,
+    "price_usd": 0.13,
+    "market_cap_usd": 18000000000,
+    "volume_24h_usd": 800000000,
+    "circulating_supply": 143000000000,
+    "tags": ["meme", "pow"]
+  },
+  {
+    "id": "ton-the-open-network",
+    "name": "Toncoin",
+    "symbol": "TON",
+    "rank": 10,
+    "price_usd": 7.10,
+    "market_cap_usd": 17000000000,
+    "volume_24h_usd": 400000000,
+    "circulating_supply": 2400000000,
+    "tags": ["pos", "messaging"]
+  }
+]

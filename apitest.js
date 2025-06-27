@@ -1,35 +1,46 @@
 console.log('JavaScript API Demo')
 
+/**
+ * Fetches cryptocurrency data from a local JSON file and displays it.
+ * Handles errors and shows a loading state.
+ */
 const getAPIData = async () => {
-  const response = await fetch(
-    'https://api.coinpaprika.com/v1/coins/btc-bitcoin'
-  )
-  if (!response) response = await fetch('/bitcoin.json')
-  const data = await response.json()
-  displayData(data)
+  const mainContainer = document.querySelector('#api-data-container')
+  if (mainContainer) mainContainer.innerHTML = '<div class="loading">Loading...</div>'
+  try {
+    const response = await fetch('/cryptoData.json')
+    if (!response.ok) throw new Error('Network response was not ok')
+    const data = await response.json()
+    displayData(data)
+  } catch (error) {
+    if (mainContainer) mainContainer.innerHTML = `<div class="error">Failed to load data: ${error.message}</div>`
+    console.error('Fetch error:', error)
+  }
 }
 
+/**
+ * Renders cryptocurrency data as styled boxes in the DOM.
+ * @param {Array|Object} data - Array of crypto objects or a single object.
+ */
 const displayData = (data) => {
-  console.log(data)
-  const contentHeading = data.name
-  document.querySelector('#api-header').innerHTML = contentHeading
-  var mainContainer = document.querySelector('#api-data-container')
-  const apiObj = data.tags
-  console.log(apiObj)
-
-  Object.keys(apiObj).forEach((apiObjKeyString) => {
-    const div = document.createElement('div')
-    const div2 = document.createElement('div')
-    div.classList.add('col-xs-12', 'col-sm-6', 'col-md-4', 'col-lg-4')
-    div2.classList.add('col-12', 'well', 'content-margin')
-    const apiObjKey = apiObj[apiObjKeyString]
-    console.log(apiObjKeyString, apiObjKey)
-    Object.keys(apiObjKey).forEach((key) => {
-      div2.innerHTML += key + ':' + apiObjKey[key] + '<br>'
-      div.appendChild(div2)
-    })
-    div.innerHTML += '<br>'
-    mainContainer.appendChild(div)
+  const mainContainer = document.querySelector('#api-data-container')
+  if (!mainContainer) return
+  mainContainer.innerHTML = ''
+  mainContainer.className = 'crypto-flex-container'
+  const coins = Array.isArray(data) ? data : [data]
+  coins.forEach((coin) => {
+    const box = document.createElement('div')
+    box.className = 'crypto-box'
+    box.innerHTML = `
+      <h3>${coin.name} <span aria-label="Symbol">(${coin.symbol})</span></h3>
+      <strong>Rank:</strong> ${coin.rank}<br>
+      <strong>Price (USD):</strong> $${coin.price_usd}<br>
+      <strong>Market Cap:</strong> $${Number(coin.market_cap_usd).toLocaleString()}<br>
+      <strong>24h Volume:</strong> $${Number(coin.volume_24h_usd).toLocaleString()}<br>
+      <strong>Circulating Supply:</strong> ${Number(coin.circulating_supply).toLocaleString()}<br>
+      <strong>Tags:</strong> ${Array.isArray(coin.tags) ? coin.tags.join(', ') : ''}
+    `
+    mainContainer.appendChild(box)
   })
 }
 
