@@ -20,7 +20,6 @@
   margin: 5px;
   width: 100%;
   max-width: 500px;
-  min-width: 250px;
   box-sizing: border-box;
   display: block; 
   /* display: flex; Changed from block to flex for stretching */
@@ -34,25 +33,31 @@
   height: auto; /* Ensures all boxes in a row are equal height */
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) { /* Large desktops */
   .crypto-box {
-    max-width: 290px;
+    max-width: 31%;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) and (min-width: 992px) { /* Laptops/desktops */
   .crypto-box {
-    max-width: 290px;
+    max-width: 30%;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) and (min-width: 768px) { /* Tablets */
   .crypto-box {
-    max-width: 370px;
+    max-width: 45%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) and (min-width: 480px) { /* Large phones/small tablets */
+  .crypto-box {
+    max-width: 46%;
+  }
+}
+
+@media (max-width: 479px) { /* Phones */
   .crypto-box {
     max-width: 100%;
     margin: 2px 0;
